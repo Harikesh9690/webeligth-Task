@@ -2,22 +2,22 @@ const userModel = require("../Models/userModel")
 const bcrypt = require('bcryptjs')
 
 const jwt = require('jsonwebtoken')
-const { isValid, isValidName, isvalidEmail, isvalidMobile, isValidPassword, pincodeValid, keyValid, validString } = require('../Validator/validation');
+const { isValid, isvalidEmail, isvalidMobile, isValidPassword, pincodeValid, keyValid, validString } = require('../validator/validations');
 const { isValidObjectId } = require("mongoose");
 
 const createUser = async function (req, res) {
     try {
         const data = req.body
         const { fname, lname, email, password, phone, address } = data;
-
-
+         
+        
         if (!isValid(fname)) return res.status(400).send({ status: false, message: "fname is mandatory and should have non empty String" })
 
-        if (!isValidName.test(fname)) return res.status(400).send({ status: false, message: "Please Provide fname in valid formate and Should Starts with Capital Letter" })
+         
 
         if (!isValid(lname)) return res.status(400).send({ status: false, message: "lname is mandatory and should have non empty String" })
 
-        if (!isValidName.test(lname)) return res.status(400).send({ status: false, message: "Please Provide lname in valid formate and Should Starts with Capital Letter" })
+       
 
         if (!isValid(email)) return res.status(400).send({ status: false, message: "email is mandatory and should have non empty String" })
 
@@ -136,16 +136,9 @@ const updateUser = async function (req, res) {
         const { fname, lname, email, password, phone, address } = body
 
         if (!validString(fname)) return res.status(400).send({ status: false, message: "fname can not be empty" })
-        if (fname) {
-            if (!isValidName.test(fname)) return res.status(400).send({ status: false, message: "Please Provide fname in valid formate and Should Starts with Capital Letter" })
-            data.fname = fname;
-        }
 
         if (!validString(lname)) return res.status(400).send({ status: false, message: "lname can not be empty" })
-        if (lname) {
-            if (!isValidName.test(lname)) return res.status(400).send({ status: false, message: "Please Provide lname in valid formate and Should Starts with Capital Letter" })
-            data.lname = lname
-        }
+        
 
         if (!validString(email)) return res.status(400).send({ status: false, message: "Email can not be empty" })
         if (email) {

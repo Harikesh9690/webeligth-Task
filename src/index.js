@@ -7,7 +7,7 @@ const route = require("./routes/route")
 app.use(express.json())
 
 
-mongoose.connect("mongodb+srv://projects94:E35tUpfux9D87GOj@cluster0.m1ousdd.mongodb.net/user", {
+mongoose.connect("mongodb+srv://projects94:E35tUpfux9D87GOj@cluster0.m1ousdd.mongodb.net/webeligth", {
     useNewUrlParser: true
 })
 .then( () => console.log("MongoDb is connected"))

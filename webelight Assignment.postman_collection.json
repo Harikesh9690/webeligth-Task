@@ -1,0 +1,397 @@
+{
+	"info": {
+		"_postman_id": "2ae8a0a1-d5b2-4165-8d4b-460097d0d270",
+		"name": "webelight Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22765006"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "User Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n     \"fname\" : \"harikesh\",\r\n    \"lname\": \"chaudhary\",\r\n    \"email\": \"Hk@gmail.com\",\r\n    \"password\": \"Hk@123456\",\r\n    \"phone\":\"7464929964\",   \r\n    \"address\": {\r\n        \"street\": \"12\",\r\n        \"city\": \"Delhi\",\r\n        \"pincode\": 11007\r\n  }\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"email\": \"Hk@gmail.com\",\r\n    \"password\": \"Hk@123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Details By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDU1MmZjODM5Y2M5MzJjMTk1YWJiOWMiLCJpYXQiOjE2ODMzMDQ0MTksImV4cCI6MTY4MzM5MDgxOX0.f4e2DQElcoYr5d-Wp9symMNfho2Ep7ue4ts7SEZ2Nss",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/user/64552fc839cc932c195abb9c",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"64552fc839cc932c195abb9c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDU1MmZjODM5Y2M5MzJjMTk1YWJiOWMiLCJpYXQiOjE2ODMzMDQ0MTksImV4cCI6MTY4MzM5MDgxOX0.f4e2DQElcoYr5d-Wp9symMNfho2Ep7ue4ts7SEZ2Nss",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"phone\":\"7464929968\"\r\n}\r\n  ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/user/64552fc839cc932c195abb9c",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"64552fc839cc932c195abb9c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "admins",
+			"item": [
+				{
+					"name": "Register Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fname\": \"mukesh\",\r\n    \"lname\": \"chaudhary\",\r\n    \"email\": \"mks@gmail.com\",\r\n    \"password\":\"Mk@12345\",\r\n    \"phone\": \"8958618299\",\r\n   \"empId\": \"A0001\"\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/registerAdmin",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"registerAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"empId\": \"A0001\",\r\n     \"password\": \"Mk@12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/loginAdmin",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"loginAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbXBJZCI6IkEwMDAxIiwiaWF0IjoxNjgzMzA1NTIwLCJleHAiOjE2ODMzOTE5MjB9.pytKBxMiRRSD5EQ5S7ne_vUeSzz0lHkeDyH7YQ30Sw4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/users/A0001/usersDetails",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"A0001",
+								"usersDetails"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "Create Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbXBJZCI6IkEwMDAxIiwiaWF0IjoxNjgzMzA1NTIwLCJleHAiOjE2ODMzOTE5MjB9.pytKBxMiRRSD5EQ5S7ne_vUeSzz0lHkeDyH7YQ30Sw4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"name\": \"socks\",\r\n \"description\": \"this is soft and smood\",\r\n \"category\": \"cloths\",\r\n\"price\": 1500,\r\n\"style\": \"3d wave\",\r\n \"availableSizes\": \"XL\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/products/A0001",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"A0001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbXBJZCI6IkEwMDAxIiwiaWF0IjoxNjgzMzA1NTIwLCJleHAiOjE2ODMzOTE5MjB9.pytKBxMiRRSD5EQ5S7ne_vUeSzz0lHkeDyH7YQ30Sw4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "cloths",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Shirt",
+									"disabled": true
+								},
+								{
+									"key": "priceSort",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "size",
+									"value": "M",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "1500",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbXBJZCI6IkEwMDAxIiwiaWF0IjoxNjgzMzA1NTIwLCJleHAiOjE2ODMzOTE5MjB9.pytKBxMiRRSD5EQ5S7ne_vUeSzz0lHkeDyH7YQ30Sw4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n       \"name\": \"Shoes\",\r\n        \"description\":\"Formal shoes\",\r\n        \"category\":\"Shoes\",\r\n        \"price\":500,\r\n        \"style\":\"Sports\",\r\n        \"availableSizes\": \"M\"\r\n      \r\n        } ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/products/A0001/64553863bbfbf77d96d8ccab",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"A0001",
+								"64553863bbfbf77d96d8ccab"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbXBJZCI6IkEwMDAxIiwiaWF0IjoxNjgzMzA1NTIwLCJleHAiOjE2ODMzOTE5MjB9.pytKBxMiRRSD5EQ5S7ne_vUeSzz0lHkeDyH7YQ30Sw4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/products/A0001/64553863bbfbf77d96d8ccab",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"A0001",
+								"64553863bbfbf77d96d8ccab"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

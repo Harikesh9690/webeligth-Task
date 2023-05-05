@@ -9,15 +9,12 @@ const isValid = function (value) {
     return true
   }
   
-  const isValidName = /^[A-Z][a-z,.'-]+(?: [A-Z][a-z,.'-]+)*$/
-  
   const isvalidEmail = /^\s*[a-zA-Z0-9]+([\.\-\_\+][a-zA-Z0-9]+)*@[a-zA-Z]+([\.\-\_][a-zA-Z]+)*(\.[a-zA-Z]{2,3})+\s*$/
   
   const isvalidMobile = /^(\+91[\-\s]?)?[0]?(91)?[6789]\d{9}$/
   
   const isValidPassword = function (pw) {
-    let pass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,15}$/;
-    if (pass.test(pw)) return true;
+     return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&]).{8,15}$/.test(pw);
   };
   
   const pincodeValid = /^(\d{4}|\d{6})$/
@@ -34,4 +31,4 @@ const isValid = function (value) {
     return number.test(value)
   }
   
-  module.exports = { isValid, priceValid, isValidName, isvalidEmail, isvalidMobile, isValidPassword, pincodeValid, keyValid, validString }
+  module.exports = { isValid, priceValid, isvalidEmail, isvalidMobile, isValidPassword, pincodeValid, keyValid, validString }
